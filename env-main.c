@@ -61,3 +61,19 @@ int cmpenv(const char *nenv, const char *name)
 			return (0);
 	return (i + 1); /* get pass '=' */
 }
+
+/* if name does exit in the environment, then overwrite determines if
+ * value should be reassigned, if 0 -> no overwrite, if non-zero -> overwrite */
+int _setenv(const char *name, const char *value, int overwrite)
+{
+	extern char **environ;
+	/* search the environ calling _getenv with name
+	 * if null then open environ, fix in name and value.
+	 */
+	int success = -1;
+	if (name && value)
+	{
+		if (_getenv(name))
+	}
+
+	return (success);
